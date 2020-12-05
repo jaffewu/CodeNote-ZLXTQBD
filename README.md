@@ -26,3 +26,5 @@ commit信息：`feature（CodeNote.md）: add wongwong codeNote`
 全局查找： `Ctrl + SHIFT + F  `
  
 当前文件查找： `Ctrl + F `
+
+软件库:jetbrains.com
