@@ -28,3 +28,7 @@ commit信息：`feature（CodeNote.md）: add wongwong codeNote`
 当前文件查找： `Ctrl + F `
 
 软件库:jetbrains.com
+
+(请仔细阅读下方内容！！！：
+激活码提取地址：重启软件  然后浏览器打开网址 ：https://www.lanzous.com/b0ev9wx1g 
+密码:77ab 点击普通下载，打开txt，全部复制粘贴到 activation code的位置。)
