@@ -8,13 +8,15 @@
 
 查看本地状态，分支，文件改动等： `git status`
 
-在git项目里新建分支： `git switch -c 新分支名`
+在git项目里新建分支 并进入： `git switch -c 新分支名`
 
 在git项目里切换到已经存在的想要的分支： `git switch 分支名`
 
 提交： `git commit -m 'feature（CodeNote.md）: add wongwong codeNote' `
 
-推送： `git push origin 分支名' `
+推送： `git push origin 分支名 `
+
+回滚： `git reset --soft 版本号` soft是不改变本地代码，hard是删除本地所有更改
 
 git规范： 分支名`feature/add-wongwong-function`
 `fix/fix-wongwong-function`
