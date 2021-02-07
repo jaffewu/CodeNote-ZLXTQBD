@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.0-beta1-dist/css/bootstrap.min.css"
+    />
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="./bootstrap-5.0.0-beta1-dist/js/bootstrap.min.js"></script>
+
+    <link href="form-validation.css" rel="stylesheet" />
+    <script src="./jquery.validate.js"></script>
+    <script src="./messages_ja.js"></script>
+    <script>
+      // https://jqueryvalidation.org/documentation/ JQ文档链接
+      $().ready(function () {
+        $("form").validate({
+          rules: {
+            firstname: "required",
+            lastname: "required",
+            username: {
+              required: true,
+              minlength: 2,
+            },
+            password: {
+              required: true,
+              minlength: 5,
+            },
+            confirmPassword: {
+              required: true,
+              minlength: 5,
+              equalTo: "#inputPassword",
+            },
+            email: {
+              required: true,
+              email: true,
+            },
+            topic: {
+              required: "#newsletter:checked",
+              minlength: 2,
+            },
+            agree: "required",
+
+            personalAccount: "required",
+          },
+          messages: {
+            //需要自定义都时候用
+            //  personalAccount: "必须吃💩才行",
+            /*  firstname: "请输入您的名字",
+            lastname: "请输入您的姓氏",
+            username: {
+              required: "请输入用户名",
+              minlength: "用户名必需由两个字符组成",
+            },
+            password: {
+              required: "请输入密码",
+              minlength: "密码长度不能小于 5 个字符",
+            },
+            confirm_password: {
+              required: "请输入密码",
+              minlength: "密码长度不能小于 5 个字符",
+              equalTo: "两次密码输入不一致",
+            },
+            email: "请输入一个正确的邮箱",
+            agree: "请接受我们的声明",
+            topic: "请选择两个主题", */
+          },
+        });
+      });
+    </script>
+  </head>
+  <body
+    class="mx-auto d-flex align-items-center vh-100"
+    style="max-width: 500px"
+  >
+    <form>
+      <section class="mb-5">
+        <p class="h4 border-bottom border-dark border-2 mb-4 pb-2">账户信息</p>
+        <div class="mb-3 row">
+          <label for="inputtext" class="col-sm-2 col-form-label"
+            >个人账号</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              name="personalAccount"
+              id="inputtext"
+              placeholder="请输入包含数字字母的组合"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >登陆密码</label
+          >
+
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword"
+              name="password"
+              placeholder="请输入包含数字，字母，特殊字符的组合"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="confirmPassword" class="col-sm-2 col-form-label"
+            >确认密码</label
+          >
+
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control"
+              id="confirmPassword"
+              placeholder="请再次输入密码"
+              name="confirmPassword"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p class="h4 border-bottom border-dark border-2 mb-4 pb-2">证件信息</p>
+        <div class="mb-3 row">
+          <label for="username" class="col-sm-2 col-form-label">用户姓名</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="请输入包含数字字母的组合"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputnumber" class="col-sm-2 col-form-label"
+            >证件号码</label
+          >
+
+          <div class="col-sm-4">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>身份证</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+
+          <div class="col-sm-6">
+            <input
+              type="text"
+              class="form-control"
+              id="inputtextnumber"
+              placeholder="请输入证件号码"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >证件地址</label
+          >
+          <div class="col-sm-10">
+            <div class="row">
+              <div class="col-sm-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  required
+                  id="省"
+                >
+                  <option selected>Please choose an option</option>
+                  <option value="广东省111">广东省</option>
+                  <!-- <option value="2">Two</option>
+                  <option value="3">Three</option> -->
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="市"
+                  disabled
+                >
+                  <option selected>Please choose an option</option>
+                  <option value="1">广州市</option>
+                  <!-- <option value="2">Two</option>
+                  <option value="3">Three</option> -->
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="区"
+                  disabled
+                >
+                  <option selected>Please choose an option</option>
+                  <option value="1">荔湾区</option>
+                  <!-- <option value="2">Two</option>
+                  <option value="3">Three</option> -->
+                </select>
+              </div>
+            </div>
+            <div class="mb-3 mt-3 row">
+              <div class="col-sm-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="请输入证件详细地址"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><input type="checkbox"> </td>
+              <td><input type="checkbox"> </td>
+              <td><input type="checkbox"> </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      <button class="w-100 btn btn-primary btn-lg" type="submit">
+        Continue to checkout
+      </button>
+      <button
+        class="w-100 btn btn-primary btn-lg mt-3"
+        type="button"
+        onclick="onClickContinue()"
+      >
+        Jump
+      </button>
+      <div><a target="_blank" href="./Home.html">aLinkJump</a></div>
+    </form>
+
+    
+
+    <script src="./新js.js"></script>
+  </body>
+</html>
