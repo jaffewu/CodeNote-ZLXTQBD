@@ -38,5 +38,8 @@ IDEA 专业版
 
 # 翻译软件
 https://www.deepl.com/translator  比Google更靠谱的翻译
+
 https://jisho.org/search     分解句子
+
 https://www.mojidict.com/search   查单词
+
