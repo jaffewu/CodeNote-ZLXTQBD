@@ -46,9 +46,12 @@ https://www.mojidict.com/search   查单词
 
 #JQ
 https://www.runoob.com/jquery/jquery-plugin-validate.html
+
 #JQ校验
 https://jqueryvalidation.org/documentation/
+
 #springboot(how2j)
 https://how2j.cn/k/springboot/springboot-thymeleat/1735.html
+
 #caniuse
 https://caniuse.com/?search=es6
